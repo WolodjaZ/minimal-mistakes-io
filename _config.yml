@@ -122,11 +122,11 @@ author:
   location         : "Poland"
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-mailbox"
+      icon: "far fa-fw fa-mailbox"
       url: "vladimirzaigrajew@gmail.com"
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
-      # url: "https://www.linkedin.com/in/vladimirzaigrajew/"
+      url: "https://www.linkedin.com/in/vladimirzaigrajew/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://www.facebook.com/wolodja.zaigrajew"
