@@ -1,0 +1,19 @@
+---
+layout: archive
+title: "Portfolio"
+permalink: /portfolio/
+collection: portfolio
+author_profile: true
+classes: wide
+---
+{% include base_path %}
+
+<div class="subtitle">A collection of projects I have done or been involved in
+</div>
+
+<div>
+  {% assign sorted = site.portfolio | sort: 'date' | reverse %}
+  {% for post in sorted %}
+    {% include archive-single-portfolio.html %}
+  {% endfor %}
+</div>
