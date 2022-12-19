@@ -8,9 +8,9 @@ main:
     id: "cv"
     url: /cv/
     symbol: "fa-user"
-  - title: "Blogs"
-    id: "Blogs"
-    url: /Blogs/
+  - title: "Blog"
+    id: "blog"
+    url: /blog/
     symbol: "fa-book"
   - title: "Portfolio"
     id: "portfolio"

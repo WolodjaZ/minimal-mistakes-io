@@ -56,7 +56,8 @@ What I asked: Write to my professor an email asking where machine learning lectu
 ```
 Dear Professor,
 
-I hope this email finds you well. I am writing to inquire about the location of tomorrow's machine learning lecture. I was unable to find the information on the course syllabus or online, and I wanted to confirm the location before the start of the class.
+I hope this email finds you well. I am writing to inquire about the location of tomorrow's machine learning lecture. 
+I was unable to find the information on the course syllabus or online, and I wanted to confirm the location before the start of the class.
 
 Thank you for your help.
 

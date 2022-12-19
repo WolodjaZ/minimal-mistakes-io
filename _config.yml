@@ -216,6 +216,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  posts:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Sass/SCSS
