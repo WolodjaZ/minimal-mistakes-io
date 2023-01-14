@@ -115,7 +115,7 @@ FROM python:3.9-slim
     /bin/bash /workspace/run.sh "$@"
 ```
 The last thing we need to define is our MLCube contract `mlcube.yaml`:
-```YAML
+```yaml
 # Name of this MLCube.
 name: repro
 # Brief description for this MLCube.
@@ -1643,7 +1643,7 @@ If you have followed along with the first part of this tutorial and completed al
 
 I would like to express my gratitude to all the writers and developers who have worked on implementing and documenting reproducible solutions for the various frameworks. In particular, I would like to thank the developers at [OpenAI]((https://openai.com)) for creating ChatGPT, which has made writing this blog much easier and MLCommons community for working hard to help everyone make better ML solution.
 
-![chatGPT](../images/posts/chatGPT_meme.png)
+![chatGPT](/images/posts/chatGPT_meme.png)
 
 ## References:
 

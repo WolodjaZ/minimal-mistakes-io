@@ -8,7 +8,7 @@ tags: [Reproducibility, JAX, Tensorflow, PyTorch]
 
 If you are reading this, I am probably dead 💀 ...
 
-<img src="../images/posts/reproducibility_meme.JPG" width="350">
+<img src="/images/posts/reproducibility_meme.JPG" width="350">
 
 Please keep in mind that this post is not finished as there are still unresolved topics about reproducibility that I will try to trace 🕵. If you see any mistakes, please email me with an explanation, and I will try to fix it. So, after this brief introduction, shall we begin?
 
