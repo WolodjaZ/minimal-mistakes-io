@@ -4,6 +4,7 @@ excerpt: "In this blog, we discuss the importance of reproducibility in machine 
 data: 2023-01-14
 languages: [python, jax, tensorflow, pytorch]
 tags: [Reproducibility, JAX, Tensorflow, PyTorch]
+toc: true
 ---
 
 If you are reading this, I am probably dead 💀 ...

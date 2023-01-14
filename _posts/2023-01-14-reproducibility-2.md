@@ -4,6 +4,7 @@ excerpt: "This is the second part of the blog about reproducibility in TensorFlo
 data: 2023-01-14
 languages: [python, jax, tensorflow, pytorch]
 tags: [Reproducibility, JAX, Tensorflow, PyTorch]
+toc: true
 ---
 
 
@@ -538,7 +539,7 @@ To illustrate how to set up reproducible training using different frameworks, le
 <details>
   <summary>PyTorch</summary>
 
-```python
+{% highlight python %}
 # Ensure once again seed
 random.seed(seed)
 np.random.seed(seed)
@@ -566,10 +567,10 @@ if cpu:
     device = torch.device("cpu") 
 else:
     device = torch.device("cuda") 
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 # Create dataloaders
 def seed_worker(worker_id):
     worker_seed = torch.initial_seed() % 2**32
@@ -614,10 +615,10 @@ test_loader = torch.utils.data.DataLoader(
     worker_init_fn=seed_worker, 
     generator=g_test,
 )
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 class Net(torch.nn.Module):
     """Net class for mnist example"""
 
@@ -639,17 +640,17 @@ class Net(torch.nn.Module):
         x = torch.nn.functional.dropout(x, training=self.training)
         x = self.fc2(x)
         return torch.nn.functional.log_softmax(x, dim=1)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 # We create a network and an optimizer
 network = Net().to(device)
 optimizer = torch.optim.SGD(network.parameters(), lr=learning_rate, momentum=momentum)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 def train(epoch: int):
     """Train the model
 
@@ -721,16 +722,16 @@ def test(epoch: int):
         },
         f"/tmp/pytorch_model_{epoch}.pth",
     )
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 # We train the model
 test(0)
 for epoch in range(1, n_epochs + 1):
     train(epoch)
     test(epoch)
-```
+{% endhighlight %}
 
     Test set: 0.7046s Avg. loss: 2.3054, Accuracy: 767/10000 (8%)
     Train Epoch: 1 7.4866s	Loss: 0.306517
@@ -742,7 +743,7 @@ for epoch in range(1, n_epochs + 1):
     Train Epoch: 4 7.3534s	Loss: 0.313859
     Test set: 0.6776s Avg. loss: 0.0615, Accuracy: 9807/10000 (98%)
 
-```python
+{% highlight python %}
 # Make sure our model is loaded not from cache
 del network, optimizer
 
@@ -764,15 +765,15 @@ np.random.set_state(checkpoint["numpy_rng"])
 random.setstate(checkpoint["python_state"])
 
 
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 test(epoch_last)
 for epoch in range(epoch_last + 1, n_epochs + 3):
     train(epoch)
     test(epoch)
-```
+{% endhighlight %}
 
     Test set: 0.6725s Avg. loss: 0.0615, Accuracy: 9807/10000 (98%)
     Train Epoch: 5 7.1801s	Loss: 0.166866
@@ -781,7 +782,7 @@ for epoch in range(epoch_last + 1, n_epochs + 3):
     Test set: 0.6392s Avg. loss: 0.0510, Accuracy: 9835/10000 (98%)
 
 
-```python
+{% highlight python %}
 # Make sure our model is loaded not from cache
 del network, optimizer
 
@@ -801,15 +802,15 @@ g_train.set_state(checkpoint["generator_dataloader_train"])
 g_test.set_state(checkpoint["generator_dataloader_test"])
 np.random.set_state(checkpoint["numpy_rng"])
 random.setstate(checkpoint["python_state"])
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 test(epoch_last)
 for epoch in range(epoch_last + 1, n_epochs + 1):
     train(epoch)
     test(epoch)
-```
+{% endhighlight %}
 
     Test set: 0.7005s Avg. loss: 0.0858, Accuracy: 9729/10000 (97%)
     Train Epoch: 3 7.3803s	Loss: 0.171899
@@ -831,7 +832,7 @@ Summary time:
   <summary>Tensorflow</summary>
 
 
-```python
+{% highlight python %}
 # Ensure once again seed
 tf.keras.utils.set_random_seed(seed)
 
@@ -841,10 +842,10 @@ batch_size_train = 16
 batch_size_test = 32
 learning_rate = 0.01
 momentum = 0.5
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 # Create a Tensorflow dataset / Keras dataset
 mnist = tf.keras.datasets.mnist
 
@@ -863,10 +864,10 @@ test_loader = (
     .cache()
     .prefetch(tf.data.AUTOTUNE)
 )
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 # Create Keras model
 model = tf.keras.models.Sequential(
     [
@@ -887,10 +888,10 @@ model = tf.keras.models.Sequential(
 )
 # Compile model
 model.compile()
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 # Define loss and optimizer
 loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 optimizer = tf.keras.optimizers.SGD(learning_rate=learning_rate, momentum=momentum)
@@ -903,10 +904,10 @@ train_loss = tf.keras.metrics.Mean(name="train_loss")
 train_accuracy = tf.keras.metrics.SparseCategoricalAccuracy(name="train_accuracy")
 test_loss = tf.keras.metrics.Mean(name="test_loss")
 test_accuracy = tf.keras.metrics.SparseCategoricalAccuracy(name="test_accuracy")
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 @tf.function
 def train_step(data, target):
     """Train function
@@ -938,10 +939,10 @@ def test_step(data, target):
     test_loss(t_loss)
     test_accuracy(target, predictions)
     return
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 # Evaluate
 test_loss.reset_states()
 test_accuracy.reset_states()
@@ -979,7 +980,7 @@ for epoch in range(1, n_epochs + 1):
         f"Test Loss: {test_loss.result():.4f}, "
         f"Test Accuracy: {test_accuracy.result():.4f}"
     )
-```
+{% endhighlight %}
 
     Epoch 0, Test Loss: 2.3172, Test Accuracy: 0.0897
     Epoch 1, Loss: 0.2931, Accuracy: 0.9081, Test Loss: 0.0746, Test Accuracy: 0.9767
@@ -987,7 +988,7 @@ for epoch in range(1, n_epochs + 1):
     Epoch 3, Loss: 0.0832, Accuracy: 0.9746, Test Loss: 0.0440, Test Accuracy: 0.9855
     Epoch 4, Loss: 0.0687, Accuracy: 0.9787, Test Loss: 0.0434, Test Accuracy: 0.9860
 
-```python
+{% highlight python %}
 # Load last epoch
 cp.restore(f"/tmp/tf_models_{n_epochs}.h5")
 
@@ -1028,13 +1029,13 @@ for epoch in range(n_epochs + 1, n_epochs + 3):
         f"Test Loss: {test_loss.result():.4f}, "
         f"Test Accuracy: {test_accuracy.result():.4f}"
     )
-```
+{% endhighlight %}
 
     Epoch 4, Test Loss: 0.0434, Test Accuracy: 0.9860
     Epoch 5, Loss: 0.0587, Accuracy: 0.9822, Test Loss: 0.0362, Test Accuracy: 0.9883
     Epoch 6, Loss: 0.0510, Accuracy: 0.9844, Test Loss: 0.0371, Test Accuracy: 0.9866
 
-```python
+{% highlight python %}
 # Load second epoch
 cp.restore("/tmp/tf_models_2.h5")
 
@@ -1075,7 +1076,7 @@ for epoch in range(2 + 1, n_epochs + 1):
         f"Test Loss: {test_loss.result():.4f}, "
         f"Test Accuracy: {test_accuracy.result():.4f}"
     )
-```
+{% endhighlight %}
 
     Epoch 2, Test Loss: 0.0658, Test Accuracy: 0.9786
     Epoch 3, Loss: 0.0841, Accuracy: 0.9743, Test Loss: 0.0433, Test Accuracy: 0.9862
@@ -1096,8 +1097,7 @@ Summary time:
 
 For our example of reproducible training in JAX, we'll be using the [Flax](https://flax.readthedocs.io/en/latest/) library to build our deep neural network (DNN). Flax is an overlay library built on top of JAX that provides a more intuitive interface for building DNNs. It does not add any additional functionality to JAX, but it makes it easier to build DNNs using JAX, which was not designed specifically for this purpose.
 
-
-```python
+{% highlight python %}
 # Ensure once again seed
 random.seed(seed)
 np.random.seed(seed)
@@ -1118,10 +1118,10 @@ batch_size_train = 64
 batch_size_test = 1000
 learning_rate = 0.01
 momentum = 0.5
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 class CNN(nn.Module):
   """A simple CNN model."""
 
@@ -1140,10 +1140,10 @@ class CNN(nn.Module):
     x = nn.Dropout(0.2)(x, deterministic=not training)
     x = nn.Dense(features=10)(x)
     return x
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 def cross_entropy_loss(logits, labels):
     """Compute the cross-entropy loss given logits and labels.
 
@@ -1175,10 +1175,10 @@ def create_train_state(rng, learning_rate, momentum):
     tx = optax.sgd(learning_rate, momentum)
     return train_state.TrainState.create(
         apply_fn=cnn.apply, params=params, tx=tx)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 @jax.jit
 def train_step(state, image, label, dropout_rng):
   """Train for a single step. Also jit-compiled for speed.
@@ -1211,10 +1211,10 @@ def eval_step(params, image, label):
   """
   logits = CNN().apply({'params': params}, image)
   return compute_metrics_jax(logits=logits, labels=label)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 def train_epoch(state, train_ds, epoch, rng):
   """Train for a single epoch.
   
@@ -1263,10 +1263,10 @@ def eval_model(params, test_ds):
   end_time = time.time() - start
   summary = jax.tree_util.tree_map(lambda x: x.item(), metrics) # map the function over all leaves in metrics
   return summary['loss'], summary['accuracy'], end_time
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 # Transformations applied on each image => bring them into a numpy array
 def image_to_numpy(img):
     img = np.array(img, dtype=np.float32)
@@ -1331,16 +1331,16 @@ test_loader = torch.utils.data.DataLoader(
     worker_init_fn=seed_worker, 
     generator=g_test,
 )
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 rng, init_rng = jax.random.split(rng)
 state = create_train_state(init_rng, learning_rate, momentum)
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 test_loss, test_accuracy, end_time = eval_model(state.params, test_loader)
 print(' test epoch: %d, time: %.4f, loss: %.2f, accuracy: %.2f' % (
       0, end_time, test_loss, test_accuracy * 100))
@@ -1369,7 +1369,7 @@ for epoch in range(1, n_epochs + 1):
             step=epoch,
             overwrite=True,
     )
-```
+{% endhighlight %}
 
     test epoch: 0, time: 1.6248, loss: 2.51, accuracy: 7.01
     train epoch: 1, time 5.7122,, loss: 0.3448, accuracy: 89.40
@@ -1381,7 +1381,7 @@ for epoch in range(1, n_epochs + 1):
     train epoch: 4, time 3.0020,, loss: 0.0866, accuracy: 97.41
     test epoch: 4, time: 0.8817, loss: 0.05, accuracy: 98.62
 
-```python
+{% highlight python %}
 # Load the model parameters
 load_dict = checkpoints.restore_checkpoint(ckpt_dir=f"/mnt/data/alzaig/tmp/jax_checkpoints_{n_epochs}", target=None)
 rng = load_dict["rng"]
@@ -1394,10 +1394,10 @@ np.random.set_state(tuple(load_dict["numpy_rng"].values()))
 random.setstate(python_state)
 epoch_last = load_dict["epoch"]
 state = flax_serialization.from_state_dict(state, load_dict['state'])
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 test_loss, test_accuracy, end_time = eval_model(state.params, test_loader)
 print(' test epoch: %d, time: %.4f, loss: %.2f, accuracy: %.2f' % (
       epoch_last, end_time, test_loss, test_accuracy * 100))
@@ -1426,7 +1426,7 @@ for epoch in range(epoch_last+1, n_epochs + 3):
             step=epoch,
             overwrite=True,
     )
-```
+{% endhighlight %}
 
     test epoch: 4, time: 0.8676, loss: 0.05, accuracy: 98.62
     train epoch: 5, time 4.7443,, loss: 0.0759, accuracy: 97.73
@@ -1434,7 +1434,7 @@ for epoch in range(epoch_last+1, n_epochs + 3):
     train epoch: 6, time 3.1997,, loss: 0.0660, accuracy: 97.96
     test epoch: 6, time: 0.8729, loss: 0.04, accuracy: 98.92
 
-```python
+{% highlight python %}
 # Load the second model parameters
 load_dict = checkpoints.restore_checkpoint(ckpt_dir=f"/mnt/data/alzaig/tmp/jax_checkpoints_2", target=None)
 rng = load_dict["rng"]
@@ -1447,10 +1447,10 @@ np.random.set_state(tuple(load_dict["numpy_rng"].values()))
 random.setstate(python_state)
 epoch_last = load_dict["epoch"]
 state = flax_serialization.from_state_dict(state, load_dict['state'])
-```
+{% endhighlight %}
 
 
-```python
+{% highlight python %}
 test_loss, test_accuracy, end_time = eval_model(state.params, test_loader)
 print(' test epoch: %d, time: %.4f, loss: %.2f, accuracy: %.2f' % (
       epoch_last, end_time, test_loss, test_accuracy * 100))
@@ -1479,7 +1479,7 @@ for epoch in range(epoch_last+1, n_epochs + 1):
             step=epoch,
             overwrite=True,
     )
-```
+{% endhighlight %}
 
     test epoch: 2, time: 0.8855, loss: 0.07, accuracy: 97.87
     train epoch: 3, time 2.9279,, loss: 0.1028, accuracy: 96.83
