@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Greetings Humans 🖖"
+title: "Greetings Humans 🖖🤖"
 excerpt: "About me"
 data: 2022-11-24
 author_profile: true
@@ -9,17 +9,29 @@ redirect_from:
   - /about.html
 ---
 
-<i class="fa fa-resistance" aria-hidden="true"></i> My name is Vladimir Zaigrajew,
 
- am a graduate of the Wroclaw University of Science and Technology in Poland with a bachelor’s degree in Computer Science with thesis in AI (2021) and master’s in AI (2022), working on Machine Learning and Computer Vision, with an emphasis on representation learning. I am interested in the field of Artificial Intelligence research, mainly Computer Vision and its applications to real-world problems.
+My name is Vladimir Zaigrajew and you may wonder who I am, well, I am recent graduate of Wroclaw University of Science and Technology in Poland, with a bachelor's degree in Computer Science and a master's in AI, I have a passion for Machine Learning and Computer Vision, with a particular interest in representation learning.
+
+Throughout my academic journey, I have focused on exploring the field of Artificial Intelligence research, with a specific emphasis on Computer Vision and its real-world applications. As a result of my studies and research, I have gained a deep understanding of the fundamental concepts and principles of AI and am well-versed in the latest trends and technologies in the field.
+
+My ultimate aim for this website is to showcase my research findings and contributions to the field of AI. I also want to encourage new people to fall in love with this field, **let`s destroy the humanity together 😈**.
 ### Education
 - **Master of Science in Artificial Intelligence, Wroclaw University of Science and Technology (WUST), Poland** (2021 – 2022) <br /> Thesis Title: Contrastive learning for multi-label classification (accepted for NeurIPS 2022 Workshop). As a participant of AI Tech (government AI, ML and cybersecurity education project), I took part in the WACV 2022 and ICLR 2022 international conferences.
 - **Bachelor of Science, Wroclaw University of Science and Technology (WUST), Poland** (2017 – 2021) <br /> Major: Computer Science <br /> Minor: Applied Computer Engineering in Medicine <br /> Thesis Title: Human activity recognition on the basis of changes of WiFi characteristics.
 
-
-Well that's about it for me. In this blog, I want to showcase some cool projects I'm involved with and maybe some advice/posts for young and mature ML researchers that I don't think are easy to find yet. I also want to encourage new people to fall in love with this field, **let`s destroy the humanity together 😈**. Right now I will simply show some cool samples of what AI can do.
-
-### [Stabble diffusion](https://huggingface.co/spaces/stabilityai/stable-diffusion), [Midjourney](https://midjourney.com/home/?callbackUrl=%2Fapp%2F), [Dalle-2](https://openai.com/dall-e-2/) simply write what you want the picture to contain or be about and Voilà.
+## Sources and blogs that I found useful on my journey and may also help you 🫵
+- [The Turing Way](https://the-turing-way.netlify.app/welcome.html): This is an open source handbook that provides guidance on how to conduct reproducible, ethical, and collaborative data science. It covers topics such as data management, analysis, and communication, and includes case studies and examples 📚.
+- [Python Packages](https://py-pkgs.org): This open source book focuses on modern and efficient workflows for creating Python packages. It covers topics such as package structure, versioning, and testing, and is directed at developers who want to create reusable and well-documented Python code 📦.
+- [Made With ML](https://madewithml.com): This is a course that covers the foundations of data science and deep learning, as well as MLOps (machine learning operations) - the process of developing, deploying, and maintaining production machine learning applications 🧑‍🏫.
+- [Full Stack Deep Learning](https://fullstackdeeplearning.com): This is a community and set of courses aimed at people building AI-powered products. It includes courses on a variety of topics, including deep learning, natural language processing, and MLops 🧑‍🏫.
+- [Dive into Deep Learning](https://d2l.ai/index.html): This interactive book covers deep learning theory and practice, with code, math, and discussions. It's implemented with several popular frameworks, including [PyTorch](https://pytorch.org) and [TensorFlow](https://www.tensorflow.org) 📚.
+- [NumFOCUS](https://numfocus.org): This organization promotes open practices in research, data, and scientific computing. They sponsor many open source projects and libraries, and organize educational programs such as [PyData](https://pydata.org) conferences and talks 👐.
+- [MLCommons](https://mlcommons.org/en/): This is an open engineering community focused on accelerating innovation in machine learning for the benefit of society. It includes a variety of initiatives, such as benchmarking, data sets, and tools for ML researchers and practitioners 🤝.
+- [Andrej Karpathy YouTube](https://www.youtube.com/@AndrejKarpathy): [Andrej Karpathy](https://karpathy.ai) is a well-known AI expert who posts videos on YouTube covering topics such as deep learning, computer vision, and natural language processing. He is also a great teacher and tries to show and teach AI in his videos 🧑‍🏫.
+- [Aleksa Gordić - The AI Epiphany](https://www.youtube.com/@TheAIEpiphany): Aleksa Gordić breaks down research papers, code, and everything AI-related. His videos are useful for people interested in research, as he discusses recent papers and breaks them down 📺.
+- [Yannic Kilcher](https://www.youtube.com/@YannicKilcher): Yannic Kilcher makes videos about machine learning research papers, programming, and issues in the AI community. He also covers the broader impact of AI in society ❤️.
+## Cool samples of what AI can do
+### [Stabble diffusion](https://huggingface.co/spaces/stabilityai/stable-diffusion), [Midjourney](https://midjourney.com/home/?callbackUrl=%2Fapp%2F), [Dalle-2](https://openai.com/dall-e-2/) just write what you want the picture to contain or be about and Voilà.
 
 Click on the photos to go to their official IG :).
 
@@ -27,7 +39,7 @@ Dogo in bath            |  Cooool interpolation of generated image | Happy Panda
 :-------------------------:|:----------------------------------------:|:-------------------------:
 [![doggo](../images/about/doggo.webp)](https://z-p42.www.instagram.com/p/CjysfyeIC6k/) | [![bouildings](../images/about/buildings.gif)](https://www.instagram.com/reel/CkZlQUFLggn/) | [![[panda]](../images/about/panda.jpg)](https://www.instagram.com/p/Cl1LKfrLEOm/)
 
-And now take a look at the new chatbot from OpenAI [ChatGPT](https://chat.openai.com), which writes blogs for me and solves my father's exams at university (well, not all of them).
+### OpenAI [ChatGPT](https://chat.openai.com), which writes blogs for me and solves my father's exams at university (well, not all).
 
 What I asked: Machine learning funny jokes
 ```
@@ -65,4 +77,4 @@ Best regards,
 [Your Name]
 ```
 
-You can even find more interesting ideas, which you can ask this bot about on the Internet.
+You can even find more interesting ideas, which you can ask this bot about on the [Internet](https://www.reddit.com/r/ChatGPT/).
