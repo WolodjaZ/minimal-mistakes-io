@@ -43,7 +43,7 @@ If you're interested in learning more about Geography and Spatial Data Science, 
 
 Additionally, it's always helpful to see how spatial data can be applied in practice. Take a look at how Burger King used geospatial data to become the leader in fast food in Mexico City a few years ago:
 
-<div align="center"></div>
+<div align="center">
   <a href="https://www.youtube.com/watch?v=gwmd9HK8t4E"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqEFL5QbfdrAe95WWZcgmF9i7gDMDZ4ZcsLhSRGS3O8ER3gjOH" alt="Burger King traffic video. Click on the image to view the video"></a>
 </div>
 
