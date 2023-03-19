@@ -7,7 +7,17 @@ tags: [Geospatial, Earth observation (EO), Unmanned aerial vehicle (UAV), Satell
 toc: true
 ---
 
-Before we dive into the main topic of this post, I would like to introduce you to ControlNet, a powerful model that uses Stable Diffusion to provide more control in image generation. You can input scribes, edges maps, etc. and ControlNet will attempt to produce images that reflect your input. For more information on this model, check out the paper here: [ControlNet :books:](https://arxiv.org/abs/2302.05543). However, if you are new to this topic, I advise visiting the Stability AI blog to learn about [Stable Diffusion :robot:](https://stability.ai/blog/stable-diffusion-public-release).
+## Audio Version :speaker:
+
+For those who cannot or choose not to read this page, I have included an audio version of this blog post. What's particularly exciting is that you may recognize the voice of Neil deGrasse Tyson, the renowned astrophysicist whom I greatly admire. Of course, I would feel unworthy to request that Mr. Tyson read and record this blog, so I used AI to assist me :robot:. I utilized the AI technology of one of the best companies in this field, [Eleven Lab](https://beta.elevenlabs.io), to create an AI voice replica from just a three-minute clip of Mr. Tyson speaking :fire:, and instructed it to read the blog.
+
+I have reached out to Mr. Tyson to obtain permission to publish the entire audio, and as a teaser, I am sharing only the introduction section. I hope you enjoy it, and that Mr. Tyson agrees to share the whole recording.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1472405803&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/vladimir-zaigrajew" title="Vladimir zaigrajew" target="_blank" style="color: #cccccc; text-decoration: none;">Vladimir zaigrajew</a> · <a href="https://soundcloud.com/vladimir-zaigrajew/geospatial-1-neil-degrass-tyson-ai" title="Geospatial 1 Neil deGrass Tyson AI" target="_blank" style="color: #cccccc; text-decoration: none;">Geospatial 1 Neil deGrass Tyson AI</a></div>
+
+## Some Treats :dog: from the World of AI
+
+Before we dive into the main topic of this post, I would like to introduce you to ControlNet, a powerful model that uses Stable Diffusion to provide more control in image generation. You can input scribes, edges maps, etc, and ControlNet will attempt to produce images that reflect your input. For more information on this model, check out the paper here: [ControlNet :books:](https://arxiv.org/abs/2302.05543). However, if you are new to this topic, I advise visiting the Stability AI blog to learn about [Stable Diffusion :robot:](https://stability.ai/blog/stable-diffusion-public-release).
 
 In Figure 1, you can see some examples of images I created using the [Hugging Face app :computer:](https://huggingface.co/spaces/hysts/ControlNet) with ControlNet. I used a magnificent photo of myself I took while attending the [WACV](https://www.google.com/search?client=safari&rls=en&q=WACV&ie=UTF-8&oe=UTF-8) conference in Hawaii :sunglasses:. Please note that I used parameters that gave me the lowest inference time to generate these images, but with better tweaks and adjustments, it's possible to create even more realistic pictures that are on par with Stable Diffusion images. Now, let's move on to the main topic of this post.
 
@@ -39,28 +49,29 @@ If you're interested in using spatial data to gain insights into patterns and pr
 
 [Spatial Data Science](https://gisgeography.com/spatial-data-science/) is an interdisciplinary field that combines GIS, computer science, statistics, and machine learning to analyze large and complex spatial datasets. It focuses on developing and applying computational and statistical methods to gain insights into spatial patterns and processes and to inform decision-making.
 
-If you're interested in learning more about Geography and Spatial Data Science, I encourage you to check out this [Jupyter Book :book:](https://geographicdata.science/book/intro.html) that showcases their applications and the tools/algorithms primarily written in Python. The book provides many examples and code snippets, but some pages can be lengthy, making it difficult to read at times. However, it is still worth the effort.
+If you're interested in learning more about geography and spatial data science, I encourage you to check out this [Jupyter Book :book:](https://geographicdata.science/book/intro.html) that showcases their applications and the tools/algorithms primarily written in Python. The book provides many examples and code snippets, but some pages can be lengthy, making it difficult to read at times. However, it is still worth the effort.
 
 Additionally, it's always helpful to see how spatial data can be applied in practice. Take a look at how Burger King used geospatial data to become the leader in fast food in Mexico City a few years ago:
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=gwmd9HK8t4E"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqEFL5QbfdrAe95WWZcgmF9i7gDMDZ4ZcsLhSRGS3O8ER3gjOH" alt="Burger King traffic video. Click on the image to view the video"></a>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/gwmd9HK8t4E" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <p align = "center">
 Figure 3 Burger King traffic video. Click on the image to view the video
 </p>
 
-You can also for starters, try working on projects such as Geographic Change Detection, Modeling Bike Ride Requests, Transport Demand Modeling, or Spatial Inequality Analysis.
+
+For starters, you can also start working on projects such as Geographic Change Detection, Modeling Bike Ride Requests, Transport Demand Modeling, or Spatial Inequality Analysis.
 
 If you want to learn more about modern geospatial approaches, I recommend reading [How to Learn Geospatial Data Science in 2023](https://towardsdatascience.com/how-to-learn-geospatial-data-science-in-2023-441d8386284e), which provides insights and tips on how to get started in this field. Additionally, this [source](https://gisgeography.com) provides a wealth of content for aspiring GIS professionals.
 
-In my opinion, learning Python Geospatial data science is likely to be more in demand in the future, as Python is a popular language for AI and there is a big community with a lot of new tools. However, GIS and R are still regularly used today. This is just my intuition and opinion, but if I were to pursue this field, I would focus on Python Geospatial Data Science :information_desk_person:.
+In my opinion, learning Python geospatial data science is likely to be more in demand in the future, as Python is a popular language for AI and there is a big community with a lot of new tools. However, GIS and R are still regularly used today. This is just my intuition and opinion, but if I were to pursue this field, I would focus on python geospatial data science :information_desk_person:.
 
 
-## Main dish :meat_on_bone: so Satellite Imagery
+## Main dish :meat_on_bone: ~ Satellite Imagery
 
-As I mentioned in the beginning, I will be focusing on satellite (and drone) images as it is a more applicable path for my skills in computer vision. I assume that you are already familiar with the field of computer vision and know what these tasks look like. If not, I recommend you to check for example this [blog :notebook:](https://www.mygreatlearning.com/blog/what-is-computer-vision-the-basics/) first before you continue reading.
+As I mentioned in the beginning, I will be focusing on satellite (and drone) images as it is a more applicable path for my skills in computer vision. I assume that you are already familiar with the field of computer vision and know what these tasks look like. If not, I recommend you to check, for example this [blog :notebook:](https://www.mygreatlearning.com/blog/what-is-computer-vision-the-basics/) first before you continue reading.
 
 Satellite and drone images differ from other types of data that computer vision programmers usually work with, because they are often [nadir](https://en.wikipedia.org/wiki/Nadir) (explained latter) format photos taken from the sky. From these photos, we can try to detect spatial features and generally do some object detection or segmentation for further analysis.
 
@@ -75,8 +86,6 @@ GSD is the size of one pixel in an image, measured in meters on the ground. GSD 
 Figure 4 Comparison of different spatial resolutions (GSD).
 </p>
 
-However, detecting small objects can be difficult if we have high GSD. Conversely, if we have low GSD, we will need to zoom in more, as we usually don't work with images 2048x2048 but more like 512x512. Thus, sometimes we can miss some objects, or in an AI approach, we can analyze a region where not all important features are included. Based on this, we need to adjust resizing and zooming in.
-
 However, detecting small objects can be challenging when the Ground Sampling Distance (GSD) is high. On the other hand, when the GSD is low, we need to zoom in more as we essentially work with images around 512x512 rather than 2048x2048. Consequently, we may miss some objects, or when using AI to detect, analyze an image without all the critical features included. Therefore, we need to adjust the resizing and zooming parameters accordingly.
 
 <p align = "center">
@@ -90,13 +99,13 @@ An approach that I liked for dealing with small objects in object detection is n
 
 The second major problem are clouds and cloud shades :cloud:. Images from satellites or planes often contain clouds that cover the land, making it impossible to detect objects in those images, or there may be cloud shadows that make predictions difficult. There are algorithms attempting to address this issue, and research is still ongoing in this field. I advise you to look into this [paper dataset :pouch:](https://www.nature.com/articles/s41597-022-01878-2) about cloud satellite data.
 
-In the case of segmentation, we have all the mentioned problems (clouds, resolution), and additionally, we can have problems with inconsistent predictions. For example, with line segmentation/detection or building segmentation, the masks will often not have consistent lines or structures. However, with post-processing, you can apply some treatment to it.
+In the case of segmentation, we have all the problems mentioned (clouds, resolution), and additionally, we can have problems with inconsistent predictions. For example, with line segmentation/detection or building segmentation, the masks will often not have consistent lines or structures. However, with post-processing, you can apply some treatment to it.
 
 Now, let's talk about the temporal aspect. You need to understand that depending on the satellites, images taken of the globe are not all taken at the same time. Thus, some time shifts can happen, and it is even more problematic if you want to combine data from other satellites. They will not align in time, which can be very problematic when one satellite image shows a region without clouds and another shows the same region with clouds, or when there are significant changes in the spatial layout between the images.
 
 ### Optical Satellite Aspects
 
-Data obtained from the satellites are not as simple as those obtained from our iphone or cameras, majorly due to optical spectrum. RGB spectrum that we see is not only thing that can be seen, however our eyes only capture this so why apparats need to capture more?
+Data obtained from the satellites are not as simple as those obtained from our iphone or cameras, majorly due to optical spectrum. The RGB spectrum that we see is not only thing that can be seen, however, our eyes only capture this, so why cameras need to capture more?
 
 Sometimes we would like to see or analyse data from a different spectrum, for example, often in films soldiers use infrared goggles to see in the dark, because it allows to see the emission of the heat from objects. Capturing data from a wider range of the electromagnetic spectrum can give us more information about some biological processes that we can't see with just that small band spectrum RGB.
 
@@ -124,15 +133,15 @@ SAR can generate images with high spatial resolution and accuracy. SAR can also 
 
 ### Other Satellite Aspects to Know
 
-While I previously mentioned that images are preprocessed, it's important to note that not all preprocessing steps may be done and you should also understand what needs to be done. The first step is an illumination correction. Illumination refers to the amount and direction of light falling on the Earth's surface when a satellite image is captured. The illumination conditions at the time of image capture can impact the appearance of features on the image, especially those with high relief or slope.
+While I previously mentioned the images are preprocessed, it's important to note that not all preprocessing steps may be done and you should also understand what needs to be done. The first step is an illumination correction. Illumination refers to the amount and direction of light falling on the Earth's surface when a satellite image is captured. The illumination conditions at the time of image capture can impact the appearance of features on the image, especially those with high relief or slope.
 
-Next aspect you need to understand is orthorectification. This is the process of removing geometric distortions from an image caused by the Earth's curvature, terrain relief, and sensor perspective. It involves reprojecting the image onto a flat surface, using ground control points to correct for distortions.
+The next aspect you need to understand is orthorectification. This is the process of removing geometric distortions from an image caused by the Earth's curvature, terrain relief, and sensor perspective. It involves reprojecting the image onto a flat surface, using ground control points to correct for distortions.
 
 <p align = "center">
 <img src="/images/posts/geospatial_1_orthorectification.png" width="400">
 </p>
 <p align = "center">
-Figure 8 Orthorectification: the process of removing geometric distortions from an image caused by the Earth's curvature .
+Figure 8 Orthorectification: the process of removing geometric distortions from an image caused by the Earth's curvature.
 </p>
 
 Finally, it's essential to understand the geographical metadata that is often provided with satellite images, such as azimuth and altitude. Azimuth refers to the angle between true north and the direction to a point of interest, while altitude refers to the orientation of a satellite or sensor relative to the Earth's surface. This information, along with geographical positioning, is critical for interpreting satellite images from a geographical perspective.
@@ -157,11 +166,11 @@ Figure 10 process of stitching images taken from drone to one image.
 
 #### UAV Image Pre and Post Processing
 
-Before we can analyze images from UAVs, we need to prepare them by stitching them together to remove unnecessary data and create a seamless image. This process is known as [Orthomosaic Generation](https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/generate-an-orthomosaics-using-the-orthomosaic-wizard.htm) and is also used in [SLAM (Simultaneous Localization and Mapping](https://www.mathworks.com/discovery/slam.html). The process involves several steps, including image calibration, feature detection, feature matching, global alignment, and blending.
+Before we can analyze the images from UAVs, we need to prepare them by stitching them together to remove unnecessary data and create a seamless image. This process is known as [Orthomosaic Generation](https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/generate-an-orthomosaics-using-the-orthomosaic-wizard.htm) and is also used in [SLAM (Simultaneous Localization and Mapping)](https://www.mathworks.com/discovery/slam.html). The process involves several steps, including image calibration, feature detection, feature matching, global alignment, and blending.
 
 Image calibration :wrench: -> Feature detection :mag: -> Feature matching (translation estimation) :couple: -> Global alignment :straight_ruler: -> Blending :link:
 
-Now let's discuse each step shortly. Image calibration :wrench: is the process involves correcting the distortions that may be present in the UAV images due to lens aberration, sensor misalignment, or atmospheric effects. Image calibration includes operations such as radiometric correction, geometric correction, and color balancing to ensure that the images are accurate and consistent. Read more about it in this opencv blog called [image calibration](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html) and in this [article](https://www.researchgate.net/publication/274674914_Digital_Camera_Calibration_Using_Images_Taken_From_An_Unmanned_Aerial_Vehicle) showing how it is done for UAV images.
+Now let's discuse each step shortly. Image calibration :wrench: is a process that involves correcting the distortions that may be present in the UAV images due to lens aberration, sensor misalignment, or atmospheric effects. Image calibration includes operations such as radiometric correction, geometric correction, and color balancing to ensure that the images are accurate and consistent. Read more about it in this opencv blog called [image calibration](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html) and in this [article](https://www.researchgate.net/publication/274674914_Digital_Camera_Calibration_Using_Images_Taken_From_An_Unmanned_Aerial_Vehicle) showing how it is done for UAV images.
 
 Feature detection :mag: is the process of identifying important features or points of interest in UAV images. This can include things like corners, edges, and distinct shapes. Common feature detection techniques include corner detection, edge detection, and blob detection. Some common algorithms used for feature detection are SIRF, SURF, and ORB ([medium paper :notebook:](https://mikhail-kennerley.medium.com/a-comparison-of-sift-surf-and-orb-on-opencv-59119b9ec3d0) comparing those methods).
 
@@ -184,24 +193,24 @@ In terms of data pipeline, I have mostly come across the use of serverless cloud
 
 ## Satellite Data Structures
 
-Before I finish the first part of this blog (yes there will be the next part :see_no_evil:), which mostly focuses on concepts in satellite and UAV images, I want to discuss data structures used with satellite data, specifically how this data is stored and read.
+Before I finish the first part of this blog (yes there will be a next part :see_no_evil:), which mostly focuses on concepts in satellite and UAV images, I want to discuss data structures used with satellite data, specifically how this data is stored and read.
 
-Firstly, before focusing on satellite images, I need to mention that geospatial data is mostly stored in two data structures: shapes and rasters. Rasters, are just images of the earth with various spectral resolutions, not only RGB. However, if you go to OpenStreetMaps, you will mainly see some shapes and not images because it is less memory-consuming to store shapes such as lines, points, or polygons. We can often refer to the earth image through a Coordinate Reference System (CRS), which is a method used to describe and locate features on the surface of the Earth. Thus sometimes we store data as shapes and not only rasters.
+Firstly, before focusing on satellite images, I need to mention that geospatial data is mostly stored in two data structures: shapes and rasters. Rasters, are just images of the earth with various spectral resolutions, not only RGB. However, if you go to OpenStreetMaps, you will mainly see some shapes and not images because it is less memory-consuming to store shapes such as lines, points, or polygons. We can often refer to the earth image through a Coordinate Reference System (CRS), which is a method used to describe and locate features on the surface of the Earth. Thus, sometimes we store data as shapes and not only rasters.
 
 ### Vector Spatial Structures
 
-Shapes are often stored in [shapefiles](https://desktop.arcgis.com/en/arcmap/latest/manage-data/shapefiles/what-is-a-shapefile.htm) (.shp/.shx/.dbf) format. This format was developed by the Environmental Systems Research Institute (ESRI) and is now widely used by many GIS software applications. The structure of a Shapefile is organized into three main components: header, record, and geometry. The header contains information about the file, including the shape type, bounding box, and projection information. The record describes the attributes associated with a feature, such as the name, population, or elevation. The geometry contains the spatial location and shape of the feature, such as a point or a polygon.
+Shapes are often stored in the [shapefiles](https://desktop.arcgis.com/en/arcmap/latest/manage-data/shapefiles/what-is-a-shapefile.htm) (.shp/.shx/.dbf) format. This format was developed by the Environmental Systems Research Institute (ESRI) and is now widely used by many GIS software applications. The structure of a Shapefile is organized into three main components: header, record, and geometry. The header contains information about the file, including the shape type, bounding box, and projection information. The record describes the attributes associated with a feature, such as the name, population, or elevation. The geometry contains the spatial location and shape of the feature, such as a point or a polygon.
 
 <p align = "center">
 <img src="/images/posts/geospatial_1_vector.png" width="400">
 </p>
 <p align = "center">
-Figure 12 Open Street Map of my town. It is mostly constructed with vector structures such as lines and polygons.
+Figure 12 Open Street Map of my city. It is mostly constructed with vector structures such as lines and polygons.
 </p>
 
 The second widely used format is [GeoJSON](https://libgeos.org/specifications/geojson/), which is based on the popular file format JSON. It is a lightweight, text-based format designed to represent simple or complex geometries, including points, lines, polygons, and multi-geometries, along with their associated properties. It is supported by many GIS software applications and web mapping platforms, such as Google Maps and Leaflet.
 
-Comparing the two formats, I would choose GeoJSON formats due to a few intakes. Shapefiles consist of multiple files, including a main file for geometry, an index file, and a database file for attributes. In contrast, GeoJSON is a single file format that includes both the geometry and attributes in one file. **GeoJSON is faster**. Shapefiles support a wide range of geometry types, including points, lines, and polygons, while GeoJSON also supports these geometry types as well as more complex geometries like multipoints, multilines, and multipolygons. GeoJSON has the advantage of being more flexible and easier to use with web applications.
+Comparing the two formats, I would choose GeoJSON due to a few reasons. Shapefiles consist of multiple files, including a main file for geometry, an index file, and a database file for attributes. In contrast, GeoJSON is a single file format that includes both the geometry and attributes in one file. **GeoJSON is faster**. Shapefiles support a wide range of geometry types, including points, lines, and polygons, while GeoJSON also supports these geometry types as well as more complex geometries like multipoints, multilines, and multipolygons. GeoJSON has the advantage of being more flexible and easier to use with web applications.
 
 There also exist [Well-Known Text (WKT)](https://libgeos.org/specifications/wkt/) and [Well-Known Binary (WKB)](https://libgeos.org/specifications/wkb/), common text-based and binary-based formats, respectively, for representing spatial data in a standardized format. In terms of usage, WKT and WKB are primarily used for exchanging spatial data between different software applications, while GeoJSON and Shapefile are commonly used for storing and sharing spatial data within GIS applications.
 
@@ -228,7 +237,7 @@ What I love about the geospatial community is their commitment to open-source an
 <img src="/images/posts/geospatial_1_cloud.png" width="400">
 </p>
 <p align = "center">
-Figure 14 Ah cloud computing and big data.
+Figure 14 Ah, cloud computing and big data.
 </p>
 
 [NetCDF (network Common Data Form)](https://pro.arcgis.com/en/pro-app/latest/help/data/multidimensional/what-is-netcdf-data.htm) is a file format and data model for storing and sharing scientific data in a platform-independent and self-describing way. The netCDF data model is based on a hierarchical structure of dimensions, variables, and attributes. A netCDF file can contain one or more variables, each of which has a name, data type, and dimensions that define its shape. Variables can be multidimensional, and each dimension can have a name and a size.
