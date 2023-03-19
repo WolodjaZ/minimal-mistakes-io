@@ -9,7 +9,7 @@ toc: true
 
 ## Audio Version :speaker:
 
-For those who cannot or choose not to read this page, I have included an audio version of this blog post. What's particularly exciting is that you may recognize the voice of Neil deGrasse Tyson, the renowned astrophysicist whom I greatly admire. Of course, I would feel unworthy to request that Mr. Tyson read and record this blog, so I used AI to assist me :robot:. I utilized the AI technology of one of the best companies in this field, [Eleven Lab](https://beta.elevenlabs.io), to create an AI voice replica from just a three-minute clip of Mr. Tyson speaking :fire:, and instructed it to read the blog.
+For those who cannot or choose not to read this page, I have included an audio version of this blog post. What's particularly exciting is that you may recognize the voice of Neil deGrasse Tyson, the renowned astrophysicist whom I greatly admire. Of course, I would feel unworthy to request that Mr. Tyson read and record this blog, so I used AI to assist me :robot:. I utilized the AI technology of one of the best companies in this field, [Eleven Lab](https://beta.elevenlabs.io), to create an AI voice replica from just a three-minute clip of Mr. Tyson speaking :fire:, and instructed it to read mthe blog.
 
 I have reached out to Mr. Tyson to obtain permission to publish the entire audio, and as a teaser, I am sharing only the introduction section. I hope you enjoy it, and that Mr. Tyson agrees to share the whole recording.
 
@@ -69,7 +69,7 @@ If you want to learn more about modern geospatial approaches, I recommend readin
 In my opinion, learning Python geospatial data science is likely to be more in demand in the future, as Python is a popular language for AI and there is a big community with a lot of new tools. However, GIS and R are still regularly used today. This is just my intuition and opinion, but if I were to pursue this field, I would focus on python geospatial data science :information_desk_person:.
 
 
-## Main dish :meat_on_bone: ~ Satellite Imagery
+## Main dish :meat_on_bone: - Satellite Imagery
 
 As I mentioned in the beginning, I will be focusing on satellite (and drone) images as it is a more applicable path for my skills in computer vision. I assume that you are already familiar with the field of computer vision and know what these tasks look like. If not, I recommend you to check, for example this [blog :notebook:](https://www.mygreatlearning.com/blog/what-is-computer-vision-the-basics/) first before you continue reading.
 
